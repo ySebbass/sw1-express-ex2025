@@ -6,11 +6,11 @@ app.get('/', (request, response) => {
     response.send('Olá Codespaces!!!');
 });
 
-app.get('/Mensagem', (request, response) => {
-    response.send('Boa Tarde');
+app.get('/Mensagem/:nome', (request, response) => {
+    response.send('Boa Tarde! ' + request.params['nome']);
 });
 
 
 app.listen(port, () => {
-    console.log("Aplicação em execução na porta" + port);
+    console.log("Aplicação em execução na porta " + port);
 });
